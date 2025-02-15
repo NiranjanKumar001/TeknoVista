@@ -26,6 +26,9 @@ const subscriptionSchema = new mongoose.Schema(
     category: {
       type: String,
       enum: [
+        "entertainment",
+        "education",
+        "health",
         "streaming",
         "music",
         "cloud",
