@@ -26,7 +26,6 @@ export const createSubscription = async (req, res, next) => {
     next(e);
   }
 }
-
 export const getUserSubscriptions = async (req, res, next) => {
   try {
     //check if the user is the same as the one inthe token
@@ -36,6 +35,8 @@ export const getUserSubscriptions = async (req, res, next) => {
       throw error;
     }
 
+
+    //update
     const subscriptions = await Subscription.find({ user: req.params.id });
 
     res.status(200).json({ success: true, data: subscriptions });
